@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>庫存管理系統</title>
+    <link rel="stylesheet" href="CSS/css_bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/mycss.css" />
+</head>
+
+<body>
+    <!-- 本功能需要登入會員後才能寬看
+    出現登入會員帳號與登出按鈕 -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-bg-danger" href="ForFinalProject_StockPanel.html">庫存管理系統</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="20230720-HWSPA.html">首頁</a>
+                    </li>
+                </ul>
+                <div>
+                    <span class="h3 fw-700 text-danger me-3" id="login_meaasge"></span>
+                    <a href="#" class="btn btn-success" id="logout_btn">登出</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="ForFinalProject_StockPanel.html">在庫列表</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="ForFinalProject_StockCreate.html">產品新增</a>
+        </li>
+    </ul>
+
+    <div class="container my-5">
+        <table
+            class="table table-striped table-borderless table-hover table-sm table-bordered border-secondary table-rwd">
+            <thead class="text-bg-dark text-center">
+                <tr>
+                    <th>編號</th>
+                    <th>海運/空運</th>
+                    <th>海運_貨櫃櫃號(11碼)</th>
+                    <th>空運_提單號碼(11碼)</th>
+                    <th>產地 (必填)</th>
+                    <th>商品名稱 (必填)</th>
+                    <th>商品等級</th>
+                    <th>規格大小</th>
+                    <th>商品數量 (必填)</th>
+                    <th>建檔時間</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody id="stock_table">
+                <tr>
+                    <td data-th="編號"><span class="table-col">001</span></td>
+                    <td data-th="海運/空運"><span class="table-col">皮卡丘</span></td>
+                    <td data-th="海運_貨櫃櫃號(11碼)"><span class="table-col">1</span></td>
+                    <td data-th="空運_提單號碼(11碼)"><span class="table-col">10</span></td>
+                    <td data-th="產地 (必填)"><span class="table-col">?</span></td>
+                    <td data-th="商品名稱 (必填)"><span class="table-col">?</span></td>
+                    <td data-th="商品等級"><span class="table-col">?</span></td>
+                    <td data-th="規格大小"><span class="table-col">?</span></td>
+                    <td data-th="商品數量 (必填)"><span class="table-col">?</span></td>
+                    <td data-th="建檔時間" class="bg-warning">
+                        <span class="table-col">QQQ</span>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-warning mr-2">更新</a>
+                        <a href="#" class="btn btn-danger">刪除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- updateModal -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-bg-warning">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">庫存資料更新</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="shipment" class="form-label">海運? 空運? (必填)</label>
+                        <input type="text" class="form-control" id="shipment" name="shipment" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="BL" class="form-label">海運_貨櫃櫃號(11碼)</label>
+                        <input type="text" class="form-control" id="BL" name="BL" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="AWB" class="form-label">空運_提單號碼(11碼)</label>
+                        <input type="text" class="form-control" id="AWB" name="AWB" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="origin" class="form-label">產地 (必填)</label>
+                        <input type="text" class="form-control" id="origin" name="origin" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="pname" class="form-label">商品名稱 (必填)</label>
+                        <input type="text" class="form-control" id="pname" name="pname" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="pgrade" class="form-label">商品等級</label>
+                        <input type="text" class="form-control" id="pgrade" name="pgrade" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="psize" class="form-label">規格大小</label>
+                        <input type="text" class="form-control" id="psize" name="psize" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="pnum" class="form-label">商品數量 (必填)</label>
+                        <input type="number" class="form-control" id="pnum" name="pnum" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        取消
+                    </button>
+                    <button type="button" class="btn btn-primary" id="modal_update_btn">
+                        確認更新
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var u_id; //for update
+        $(function () {
+            //確認uid是否存在, 若存在傳遞至後端check_uid_api.php確認是否合法
+            if (getCookie('uid01') != "") {
+                //uid是存在, 傳遞至後端check_uid_api.php確認是否合法
+                $.ajax({
+                    type: "POST",
+                    url: "api/check_uid_api.php",
+                    data: { uid: getCookie('uid01') },
+                    dataType: "json",
+                    success: showdata_check_uid,
+                    error: function () {
+                        alert("error-api/check_uid_api.php");
+                    }
+                });
+            } else {
+                //uid是不存在
+                alert("請先登入會員!");
+                location.href = "20230720-HWSPA.html";
+            }
+
+            //監聽登出按鈕 #logout_btn
+            $("#logout_btn").click(function () {
+                logout();
+            });
+
+        });
+
+
+
+        function showdata_check_uid(data) {
+            console.log(data);
+            if (data.state) {
+                //uid 驗證成功
+                //顯示歡迎詞
+                $("#login_meaasge").text('歡迎管理員: ' + data.data[0].Username);
+
+                $.ajax({
+                    type: "GET",
+                    url: "api/ForFinalProject_StockPanel_r_API.php",
+                    dataType: "json",
+                    async: false,
+                    success: showdata_table,
+                    error: function () {
+                        alert("error-api/ForFinalProject_StockPanel_r_API.php");
+                    },
+                });
+            } else {
+                //uid 驗證失敗
+                alert("請先登入會員!");
+                location.href = "20230720-HWSPA.html";
+            }
+        }
+
+        //登出帳號
+        //刪除uid並重整畫面
+        function logout() {
+            setCookie('uid01', '', 7);
+            location.href = "20230720-HWSPA.html";
+        }
+
+        function showdata_table(data) {
+            console.log(data);
+            if (data.state) {
+                $("#stock_table").empty();
+                data.data.forEach(function (item) {
+                    console.log(item);
+                    var strHTML =
+                        '<tr><td data-th="編號"><span class="table-col">' +
+                        item.ID + '</span></td><td data-th="海運/空運"><span class="table-col">' +
+                        item.Shipment + '</span></td><td data-th="海運_貨櫃櫃號(11碼)"><span class="table-col">' +
+                        item.BL + '</span></td><td data-th="空運_提單號碼(11碼)"><span class="table-col">' +
+                        item.AWB + '</span></td><td data-th="產地 (必填)"><span class="table-col">' +
+                        item.Origin + '</span></td><td data-th="商品名稱 (必填)"><span class="table-col">' +
+                        item.Pname + '</span></td><td data-th="商品等級"><span class="table-col">' +
+                        item.Pgrade + '</span></td><td data-th="規格大小"><span class="table-col">' +
+                        item.Psize + '</span></td><td data-th="商品數量 (必填)"><span class="table-col">' +
+                        item.Pnumber + '</span></td><td data-th="建檔時間" class="bg-info" ><span class="table-col">' +
+                        item.Created_at + '</span></td><td><a href = "#" class="btn btn-warning mr-2" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="' +
+                        item.ID + '" data-shipment="' + item.Shipment + '" data-BL="' + item.BL + '" data-AWB="' + item.AWB + '" data-origin="' + item.Origin + '" data-Pname="' + item.Pname + '" data-Pgrade="' + item.Pgrade + '" data-Psize="' + item.Psize + '" data-Pnumber="' + item.Pnumber + '" id="update_btn"> 更新</a ><a href="#" class="btn btn-danger ms-2" data-id="' +
+                        item.ID + '" data-shipment="' + item.Shipment + '" data-BL="' + item.BL + '" data-AWB="' + item.AWB + '" data-origin="' + item.Origin + '" data-Pname="' + item.Pname + '" data-Pgrade="' + item.Pgrade + '" data-Psize="' + item.Psize + '" data-Pnumber="' + item.Pnumber + '" id="delete_btn">刪除</a></td></tr> ';
+
+                    $("#stock_table").append(strHTML);
+                });
+            } else {
+                alert(data.message);
+            }
+
+
+            //update_btn按鈕監聽
+            $("#stock_table #update_btn").click(function () {
+                console.log($(this).data("id"));
+                console.log($(this).data("shipment"));
+                console.log($(this).data("bl"));
+                console.log($(this).data("awb"));
+                console.log($(this).data("origin"));
+                console.log($(this).data("pname"));
+                console.log($(this).data("pgrade"));
+                console.log($(this).data("psize"));
+                console.log($(this).data("pnumber"));
+
+
+                $("#shipment").val($(this).data("shipment"));
+                $("#BL").val($(this).data("bl"));
+                $("#AWB").val($(this).data("awb"));
+                $("#origin").val($(this).data("origin"));
+                $("#pname").val($(this).data("pname"));
+                $("#pgrade").val($(this).data("pgrade"));
+                $("#psize").val($(this).data("psize"));
+                $("#pnum").val($(this).data("pnumber"));
+
+                u_id = $(this).data("id");
+                console.log(u_id);
+            });
+
+            //delete_btn按鈕監聽
+            $("#stock_table #delete_btn").click(function () {
+                console.log($(this).data("id"));
+                console.log($(this).data("shipment"));
+                console.log($(this).data("bl"));
+                console.log($(this).data("awb"));
+                console.log($(this).data("origin"));
+                console.log($(this).data("pname"));
+                console.log($(this).data("pgrade"));
+                console.log($(this).data("psize"));
+                console.log($(this).data("pnumber"));
+
+                if (confirm("!!!!!!???你確定要刪除???!!!!!!" + "\n" + "確認刪除 編號 : " + $(this).data("id") + "\n" + "確認刪除 海運/空運 : " + $(this).data("shipment") + "\n" + "確認刪除 海運_貨櫃櫃號 : " + $(this).data("bl") + "\n" + "確認刪除 空運_提單號碼 : " + $(this).data("awb") + "\n" + "確認刪除 產地 : " + $(this).data("origin") + "\n" + "確認刪除 商品名稱 : " + $(this).data("pname") + "\n" + "確認刪除 商品等級 : " + $(this).data("pgrade") + "\n" + "確認刪除 規格大小 : " + $(this).data("psize") + "\n" + "確認刪除 商品數量 : " + $(this).data("pnumber"))) {
+                    //傳遞後端control_panel_d_mem_api.php執行刪除
+                    $.ajax({
+                        type: "POST",
+                        url: "api/ForFinalProject_StockDelete_API.php",
+                        data: { id: $(this).data("id") },
+                        dataType: "json",
+                        success: showdata_delete,
+                        error: function () {
+                            alert("error-api/ForFinalProject_StockDelete_API.php");
+                        },
+                    });
+                }
+            });
+        }
+        //modal_update_btn按鈕監聽
+        $("#modal_update_btn").click(function () {
+            console.log($("#shipment").val());
+            console.log($("#BL").val());
+            console.log($("#AWB").val());
+            console.log($("#origin").val());
+            console.log($("#pname").val());
+            console.log($("#pgrade").val())
+            console.log($("#psize").val());
+            console.log($("#pnum").val());
+            console.log(u_id);
+
+            $.ajax({
+                type: "POST",
+                url: "api/ForFinalProject_StockUpdate_API.php",
+                data: {
+                    id: u_id,
+                    shipment: $("#shipment").val(),
+                    BL: $("#BL").val(),
+                    AWB: $("#AWB").val(),
+                    origin: $("#origin").val(),
+                    pname: $("#pname").val(),
+                    pgrade: $("#pgrade").val(),
+                    psize: $("#psize").val(),
+                    pnum: $("#pnum").val(),
+
+                },
+                dataType: "json",
+                success: showdata_update,
+                error: function () {
+                    alert("error-api/ForFinalProject_StockUpdate_API.php");
+                },
+            });
+        });
+
+        function showdata_update(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "ForFinalProject_StockPanel.html";
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_delete(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "ForFinalProject_StockPanel.html";
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //w3c
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>

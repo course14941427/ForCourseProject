@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>專題</title>
+
+  <link rel="stylesheet" href="CSS/css_bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/mycss.css">
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/animate.css_4.1.1_animate.min.css">
+
+  <style>
+    .modal_line {
+      position: relative;
+    }
+
+    .modal_line::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: rgba(0, 0, 0, 0.2);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.2);
+      ;
+    }
+
+    .s1000_text .s800_text {
+      color: var(--mywhite);
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+      padding: 15px;
+      margin: 15px;
+      border-radius: 15px;
+    }
+
+    .timeline-section {
+      position: relative;
+    }
+
+    .timeline-section::before {
+      position: absolute;
+      content: "";
+      top: 48px;
+      bottom: 48px;
+      width: 2px;
+      background-color: var(--mycolor14);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-section-pointer {
+      position: relative;
+    }
+
+    .timeline-section-pointer::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      background-color: var(--mycolor08);
+      border-radius: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 3px solid var(--mycolor10);
+    }
+
+    .timeline-section-pointer:hover::before {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .s700_text,
+      .s900_text {
+        color: var(--mywhite);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+        padding: 15px;
+        margin: 15px;
+        border-radius: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- s100 brand icons-->
+  <section id="s100" class="bg-secondary">
+    <div class="container text-end">
+      <a href="https://www.facebook.com/" title="Facebook">
+        <i class="fa-brands fa-facebook fa-beat-fade fa-lg text-white"></i></a>
+      <a href="https://www.instagram.com/" title="Instagram">
+        <i class="fa-brands fa-instagram fa-beat-fade fa-lg text-white"></i></a>
+      <a href="https://twitter.com/" title="twitter">
+        <i class="fa-brands fa-twitter fa-beat-fade fa-lg text-white"></i></a>
+      <a href="https://zh.wikipedia.org/zh-tw/Wikipedia:%E9%A6%96%E9%A1%B5" title="wikipedia"><i
+          class="fa-brands fa-wikipedia-w fa-beat-fade fa-lg text-white"></i></a>
+    </div>
+  </section>
+
+  <!-- s200 navbar -->
+  <section id="s200" class="bg-dark">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid justify-content-center">
+          <a class="navbar-brand animate__animated animate__jackInTheBox" href="#"><i
+              class="fa-solid fa-seedling fa-2xl ms-5"></i></a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- <li class="nav-item">
+
+                                <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i>首頁Home</a>
+                            </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#300" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  集團公司(台灣、國外)
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-center" href="#">台北辦事處</a></li>
+                  <li><a class="dropdown-item text-center text-bg-warning" href="#">台中總公司</a></li>
+                  <li><a class="dropdown-item text-center" href="#">高雄辦事處</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item text-center" href="#">美國分公司</a></li>
+                  <li><a class="dropdown-item text-center" href="#">日本分公司</a></li>
+                  <li><a class="dropdown-item text-center" href="#">紐西蘭分公司</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s400">經營理念</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s500">關於我們</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s600">進口項目</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s700">產地</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s800">產期</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s900">商品報價</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s1000">公司徵才</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s1100">公司位置與客戶資料收集</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#s1200">版權宣告和友站連結</a>
+              </li>
+              <!-- <li class="nav-item">
+                                <a class="nav-link disabled" href="#">我躲起來(disabled)</a>
+                            </li> -->
+            </ul>
+
+
+          </div>
+        </div>
+        <form class="d-flex" role="search">
+          <a href="#" class="btn btn-info ms-2 d-none" id="s20_logout_btn">登出</a>
+          <a href="#" class="btn btn-outline-primary me-1" data-bs-toggle="modal" data-bs-target="#loginModal"
+            id="s20_login_btn">登入</a>
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
+            id="s20_register_btn">註冊</a>
+          <a href="20230810-control_panel.html" target="_blank" class="btn btn-danger ms-2 d-none"
+            id="s20_control_btn">後臺管理</a>
+          <a href="ForFinalProject_StockPanel.html" target="_blank" class="btn btn-danger ms-2 d-none"
+            id="s20_stock_control_btn">庫存管理</a>
+          <span>
+            <h5 class="text-secondary ms-2 d-none" id="login_message">歡迎回來</h5>
+          </span>
+        </form>
+      </nav>
+
+    </div>
+  </section>
+
+  <!-- loginModal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-bg-success">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">管理員登入</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="" class="form-label">帳號</label>
+            <input type="text" class="form-control" placeholder="請輸入帳號!" id="login_username" name="login_username">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">密碼</label>
+            <input type="password" class="form-control" placeholder="請輸入密碼!" id="login_password" name="login_password">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#registerModal">還沒有帳號, 註冊去!</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-success" id="login_btn">確認登入</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- registerModal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header text-bg-warning">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">管理員註冊</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row modal_line">
+            <div class="col-6">
+              <h3>註冊管理員須知</h3>
+              <p>1.請依實際到貨明細入量</p>
+              <p>2.非管理員請勿任意修改參數</p>
+              <p>3.請共同維護系統安全，使用完請登出。</p>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="col-6">
+              <div class="mb-3">
+                <label for="" class="form-label">帳號</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="請輸入帳號5-8!">
+                <div class="valid-feedback" id="valid_message">帳號輸入正確</div>
+                <div class="invalid-feedback" id="invalid_message">帳號輸入錯誤</div>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">密碼</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="請輸入密碼5-8!">
+                <div class="valid-feedback">密碼輸入正確</div>
+                <div class="invalid-feedback">密碼輸入錯誤</div>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">確認密碼</label>
+                <input type="password" id="repassword" name="repassword" class="form-control" placeholder="請再次輸入密碼!">
+                <div class="valid-feedback">確認密碼輸入正確</div>
+                <div class="invalid-feedback">確認密碼輸入錯誤</div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">暱稱</label>
+                <input type="text" id="nickname" name="nickname" class="form-control" placeholder="請輸入暱稱">
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="me-auto" data-bs-toggle="modal" data-bs-target="#loginModal">已經有帳號, 登入去!</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-warning" id="reg_btn">確認註冊</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- s300 集團分公司(幻燈片)-->
+  <section id="s300">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1" title="台北辦事處"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"
+          title="台中總公司"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"
+          title="高雄辦事處"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"
+          title="美國分公司"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"
+          title="日本分公司"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"
+          title="紐西蘭分公司"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="image/taipei.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>台北辦事處</h5>
+            <p>Office Taipei.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="image/national taichung theater.jpg" class="d-block w-100 h-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5><b>台中總公司</h5></b>
+            <p><strong>Head Office Taichung.</p></strong>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="image/Kaohsiung.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>高雄辦事處</h5>
+            <p>Office Kaohsiung.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="image/us.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>美國分公司</h5>
+            <p>Branch US</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="image/japan.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>日本分公司</h5>
+            <p>Branch Japan.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="image/nz.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>紐西蘭分公司</h5>
+            <p>Branch New Zealand</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- s400 公司經營理念 -->
+  <section id="s400">
+    <div class="container bg-light">
+      <h1 class="fw-900 text-center text-dark my-3"><i class="fa-solid fa-gear">&nbsp;</i>集團經營理念</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center justify-content-center">
+            <div>
+              <h2 class="text-center fw-900 wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="2s"
+                data-wow-iteration="1"><i class="fa-regular fa-user">&nbsp;&nbsp;</i>以人為本</h2>
+              <p class="text-center">始終相信，員工及顧客是我們公司經營最重要的基石。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex align-items-center justify-content-center">
+            <div>
+              <h2 class="text-center fw-900 wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="2s"
+                data-wow-iteration="1"><i class="fa-regular fa-clipboard">&nbsp;&nbsp;</i>專注本業</h2>
+              <p class="text-center">我們會持續尋找優質品質的供應商合作，提供消費者品質優良、價格實惠的商品。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex align-items-center justify-content-center mt-2">
+            <div>
+              <h2 class="text-center fw-900 wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="2s"
+                data-wow-iteration="1"><i class="fa-regular fa-handshake">&nbsp;&nbsp;</i>誠信</h2>
+              <p class="text-center">我們要求自己且盼望跟我們合作的供應商也可以本著誠實信用的原則服務雙方。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex align-items-center justify-content-center mt-2">
+
+            <div>
+              <h2 class="text-center fw-900 wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="2s"
+                data-wow-iteration="1"><i class="fa-regular fa-registered">&nbsp;&nbsp;</i>穩健</h2>
+              <p class="text-center"></p>不輕易業外投資，專注本業是我們一直努力的方向。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s500 關於我們 跑動數字特效 -->
+  <section id="s500">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-5 mt-1 bg-cover wow animate__fadeInLeft" data-wow-delay="0s" data-wow-duration="2s"
+          style="background-image: url(image/fruit.jpg); height: 600px;"></div>
+        <div class="col-md-7 p-5">
+          <h1 class="fw-900 text-start text-dark mb-5"><i class="fa-regular fa-id-badge">&nbsp;</i>關於我們</h1>
+          <h1>西元2023年成立</h1>
+          <h1>專營進口生鮮水果</h1>
+          <p class="mb-1 mt-2">本公司為進口貿易商，主要從事新鮮水果相關進口業務。在業界亦有累積多年的經驗與一定的口碑，營運至今一直在穩定成長中。</p>
+          <p class="mb-1">
+            本公司擁有優秀、活潑、向心力強的工作團隊，秉持著誠信務實的經營理念，以護持企業永續經營、穩定成長為目標，逐年有計畫性地積極擴展海內外業務，繼台北總公司之後，相繼於美國、日本、紐西蘭等陸續設立分公司，營業規模亦不斷提昇中。
+          </p>
+          <p class="mb-1">
+          <p class="mb-1"></p>
+          <div class="row mt-5">
+            <div class="col-md-3">
+              <h4 class="fw-700">進口冷藏櫃數</h4>
+              <h2 class="fw-700 counter01">600 <span class="h4">/櫃</span></h2>
+            </div>
+            <div class="col-md-3">
+              <h4 class="fw-700">國外合作供應商</h4>
+              <h2 class="fw-700 counter02">25 <span class="h4">/間</span></h2>
+            </div>
+            <div class="col-md-3">
+              <h4 class="fw-700">國內合作客戶數</h4>
+              <h2 class="fw-700 counter03">150 <span class="h4">/間</span></h2>
+            </div>
+            <div class="col-md-3">
+              <h4 class="fw-700">進口品項</h4>
+              <h2 class="fw-700 counter04">15<span class="h4">/種</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s600 進口項目 -->
+  <section id="s600">
+    <div class="container bg-light">
+      <h1 class="fw-900 text-center text-dark my-3"><i class="fa-regular fa-circle-check">&nbsp;</i>進口項目</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h3 class="fw-900 text-success my-3">蘋果</h3>
+          <p class="text-center fw-700">
+            ‧富士蘋果 Fuji Apple<br>
+            ‧加拉蘋果 Gala Apple<br>
+            ‧五爪蘋果 Red Delicious<br>
+            ‧蜜脆蘋果 Honeycrisp<br>
+            ‧翠玉蘋果 Granny Smith<br>
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h3 class="fw-900 text-success my-3">奇異果</h3>
+          <p class="text-center fw-700">
+            ‧綠色奇異果 (Green)<br>
+            ‧陽光金圓頭 (SunGold)<br>
+            ‧寶石紅奇異果 (RubyRed)
+          </p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h3 class="fw-900 text-success my-3">櫻桃</h3>
+          <p class="text-center fw-700">
+            ‧美國櫻桃<br>
+            ‧智利櫻桃<br>
+            ‧紐西蘭櫻桃
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s700 產地 -->
+  <section id="s700" style="position: relative;">
+    <div class="row">
+      <div class="col-md-5 bg-cover mt-1 wow animate__fadeInLeft" data-wow-delay="0s" data-wow-duration="2s" style="position: absolute;
+      background-image: url(image/daniel-j-schwarz-oARPb2dEOtQ-unsplash.jpg);top: 0;
+            bottom: 0;
+            z-index: -1;"></div>
+    </div>
+    <div class="container mt-1">
+      <div class="row justify-content-end">
+        <div class="col-md-7 py-3 s700_text">
+          <h1 class="fw-900 text-center text-dark"><i class="fa-regular fa-flag">&nbsp;</i>產地</h1>
+          <h4 class="fw-900 text-center">主要進口品項產地有:美國、日本、智利、紐西蘭、澳洲</h4>
+          <hr>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <h3 class="fw-900 text-center">美國</h3>
+              <p class="fw-900 text-center">蘋果、櫻桃、甜桃、水蜜桃及葡萄</p>
+            </div>
+            <div class="col-md-6">
+              <h3 class="fw-900 text-center">智利</h3>
+              <p class="fw-900 text-center">蘋果、櫻桃、甜桃、水蜜桃及葡萄</p>
+            </div>
+            <div class="col-md-6 mt-4">
+              <h3 class="fw-900 text-center">紐西蘭</h3>
+              <p class="fw-900 text-center">蘋果、櫻桃及奇異果。</p>
+            </div>
+            <div class="col-md-6 mt-4 d-flex align-items-center justify-content-center">
+              <a href="#s800" class="btn btn-outline-danger wow animate__heartBeat" data-wow-delay="0s"
+                data-wow-duration="1s" data-wow-iteration="infinite">查看更多
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s800 產期 步驟時間軸特效 -->
+  <section id="s800" class="bg-cover" style="background-color: gray; background-attachment: fixed;">
+    <div class="container mt-1">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-white">
+          <div class="s800_text">
+            <h1 class="fw-900"><i class="fa-regular fa-calendar">&nbsp;</i>進口商品產期介紹</h1><br>
+            <h4>產地:以「美國」為例</h4><br>
+            <p>以下以台灣(北半球)月份作為簡易區分。</p>
+            <p>北半球常用的季節劃分是以天文季節為基礎。</p>
+            <p>3月至5月為春季</p>
+            <p>6月至8月為夏季</p>
+            <p>9月至11月為秋季</p>
+            <p>12月至隔年2月為冬季</p>
+          </div>
+        </div>
+        <div class="col-md-8 timeline-section py-5">
+          <div class="row timeline-section-pointer align-items-center">
+            <div class="col-6 text-center">
+              <div class="s800_text">
+                <h2>3~5月-春季(spring)</h2>
+                <h5>美國蘋果(09月~04月)</h5>
+                <h5>美國柑橘類(03月~09月)
+                </h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <img src="image/spring.jpg" class="img-fluid wow animate__fadeInLeft" data-wow-delay="0s"
+                data-wow-duration="2s" alt="">
+            </div>
+          </div>
+          <div class="row flex-row-reverse timeline-section-pointer align-items-center">
+            <div class="col-6 text-center">
+              <div class="s800_text">
+                <h2>6~8月-夏季(Summer)</h2>
+                <h5>美國甜桃、水蜜桃(07月~9月)</h5>
+                <h5>美國加州櫻桃(06月~07月)</h5>
+                <h5>美國華盛頓州櫻桃(07月~08月)</h5>
+                <h5>美國葡萄(08月~10月)</h5>
+                <h5>美國蜜李(07月~09月)</h5>
+                <h5>美國柑橘類(03月~09月)</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <img src="image/summer.jpg" class="img-fluid wow animate__fadeInRight" data-wow-delay="0s"
+                data-wow-duration="2s" alt="">
+            </div>
+          </div>
+          <div class="row timeline-section-pointer align-items-center">
+            <div class="col-6 text-center">
+              <div class="s800_text">
+                <h2>9~11月-秋季(Fall)</h2>
+                <h5>美國柑橘類(03月~09月)</h5>
+                <h5>美國甜桃、水蜜桃(07月~9月)</h5>
+                <h5>美國蘋果(09月~04月)</h5>
+                <h5>美國葡萄(08月~10月)</h5>
+                <h5>美國蜜李(07月~09月)</h5>
+                <h5>美國柑橘類(03月~09月)</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <img src="image/fall.jpg" class="img-fluid wow animate__fadeInLeft" data-wow-delay="0s"
+                data-wow-duration="2s" alt="">
+            </div>
+          </div>
+          <div class="row flex-row-reverse timeline-section-pointer align-items-center">
+            <div class="col-6 text-center">
+              <div class="s800_text">
+                <h2>12-2月-冬季(Winter)</h2>
+                <h5>美國蘋果(09月~04月)</h5>
+              </div>
+            </div>
+            <div class="col-6">
+              <img src="image/winter.jpg" class="img-fluid wow animate__fadeInRight" data-wow-delay="0s"
+                data-wow-duration="2s" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- s900 商品報價 -->
+  <section id="s900" style="position: relative;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 s900_text">
+          <h1 class="fw-900 text-center mt-5"><i class="fa-regular fa-money-bill-1">&nbsp;</i>商品報價</h1>
+
+          <dl class="row align-content-center justify-content-center mt-3">
+            <dt class="h3 fw-700 col-sm-3 text-center">品規項目</dt>
+            <dt class="h3 fw-700  col-sm-9 text-center">價格說明</dt>
+            <hr class="mt-1">
+            <dt class="h4 fw-700 col-sm-3 text-center">美國蘋果</dt>
+            <dd class="col-sm-9 text-center">
+              <p>56顆，每件$2000</p>
+              <p>64顆，每件$1800</p>
+              <p>72顆，每件$1600</p>
+            </dd>
+
+            <dt class="h4 fw-700 col-sm-3 text-center">美國櫻桃</dt>
+            <dd class="col-sm-9 text-center">
+              <p>8.5Row(32mm+)/ 5公斤-每件$1600</p>
+              <p>9Row(30mm+)/ 5公斤-每件$1400</p>
+              <p>9.5Row(28mm+)/ 5公斤-每件$1200</p>
+            </dd>
+
+            <dt class="h4 fw-700 col-sm-3 text-center">美國水蜜桃</dt>
+            <dd class="col-sm-9 text-center text-truncate">
+              <p>16顆，每件$2300</p>
+              <p>18顆，每件$2100</p>
+              <p>20顆，每件$1900</p>
+            </dd>
+
+            <dt class="h4 fw-700 col-sm-3 text-center">紐西蘭奇異果</dt>
+            <dd class="col-sm-9 text-center">
+              <dl class="row">
+                <dt class="h5 fw-700 col-sm-4 text-end">
+                  <p>綠色奇異果</p>
+                </dt>
+                <dd class="col-sm-8 text-center">
+                  <p>綠色奇異果22顆，每件$500元</p>
+                  <p>綠色奇異果25顆，每件$450元</p>
+                </dd>
+                <dt class="h5 fw-700 col-sm-4 text-end mt-2">
+                  <p>陽光金圓頭</p>
+                </dt>
+                <dd class="col-sm-8 text-center mt-2">
+                  <p>陽光金圓頭22顆，每件$800元</p>
+                  <p>陽光金圓頭25顆，每件$750元</p>
+                </dd>
+              </dl>
+            </dd>
+          </dl>
+          <p class="h5 fw-700 text-center">如需其他商品報價，請留下連絡方式。</p>
+          <p class="h5 fw-700 text-center">或請致電0912-345678</p>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-5 bg-cover mt-1 wow animate__fadeInRight" data-wow-delay="0s" data-wow-duration="2s" style="position: absolute;
+            top: 0;
+            bottom: 0;
+            background-image: url(image/marek-piwnicki-BxGP9XnzYjE-unsplash.jpg);
+            z-index: -1;"></div>
+    </div>
+  </section>
+
+  <!-- s1000 公司徵才 -->
+  <section id="s1000" class="bg-cover" style="background-color: gray; background-attachment: fixed;">
+    <div class="container-fluid">
+      <div class="row mt-1">
+        <h1 class="fw-900 text-center mt-5"><i class="fa-solid fa-user-group">&nbsp;</i>公司徵才</h1>
+        <hr>
+        <div class="col-md-6 bg-cover" style="background-image: url(); height: 360px;">
+          <div class="row">
+            <div class="col-md-6 s1000_text text-center">
+              <h2 class="">業務助理</h2>
+              <p>工作內容:庫存管理，出貨單產出。</p>
+              <p>待遇:$32000/月+獎金</p>
+              <p>福利:免費供餐</p>
+              <a href="#" class="btn btn-warning wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="1s"
+                data-wow-iteration="infinite">加入我們</a>
+            </div>
+            <div class="col-md-6 s1000_text text-center">
+              <h2 class="">業務經理</h2>
+              <p>工作內容:商品銷售議價。</p>
+              <p>待遇:$40000/月+獎金</p>
+              <p>福利:免費供餐</p>
+              <a href="#" class="btn btn-warning wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="1s"
+                data-wow-iteration="infinite">加入我們</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 bg-cover" style="background-image: url(); height: 360px;">
+          <div class="row">
+            <div class="col-md-6 s1000_text text-center">
+              <h2 class="">國貿文件專員</h2>
+              <p>工作內容:與國外供應商書信或電話來往，聯繫貿易相關所需工作。</p>
+              <p>待遇:$33000/月+獎金</p>
+              <a href="#" class="btn btn-warning wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="1s"
+                data-wow-iteration="infinite">加入我們</a>
+            </div>
+            <div class="col-md-6 s1000_text text-center">
+              <h2 class="">副總經理</h2>
+              <p>工作內容:協助總經理辦理各項業務</p>
+              <p>待遇:面議</p>
+              <a href="#" class="btn btn-warning wow animate__heartBeat" data-wow-delay="0s" data-wow-duration="1s"
+                data-wow-iteration="infinite">加入我們</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s1000 公司位置介紹 -->
+  <section id="s1100">
+    <div class="container">
+      <div class="row mt-1">
+        <div class="col-md-6">
+          <!-- width=100% -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14559.39401543676!2d120.6168086!3d24.1770453!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e01b59362d7%3A0xd6e35a8f5f20b731!2z6LKh5ZyY5rOV5Lq65Y-w5Lit5LiW55WM6LK_5piT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1690417951653!5m2!1szh-TW!2stw"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" width="100%" height="450" style="border:0;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <h3 class="fw-900 text-center"><i class="fa-regular fa-compass"></i>以上為台中總公司所在地</h3>
+          <h4 class="fw-900 text-center">407台中市西屯區天保街60號</h4>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <h1 class="fw-900 text-center"><i class="fa-regular fa-pen-to-square">&nbsp;</i>預約洽談</h1>
+            <label for="" class="form-label">姓名</label>
+            <input type="text" class="form-control is-valid">
+            <div class="valid-feedback">輸入正確</div>
+            <div class="invalid-feedback">輸入錯誤</div>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">電話</label>
+            <input type="phone" class="form-control is-invalid">
+            <div class="valid-feedback">輸入正確</div>
+            <div class="invalid-feedback">輸入錯誤</div>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">人數</label>
+            <input type="number" class="form-control" min="0" max="10">
+          </div>
+          <div class="form-check form-check-inline">
+            <label for="">需要素食</label>
+            <input type="radio" class="form-check-input" id="" name="food">
+          </div>
+          <div class="form-check form-check-inline">
+            <label for="">不需要素食</label>
+            <input type="radio" class="form-check-input" id="" name="food">
+          </div>
+          <div class="text-end">
+            <a href="#" class="btn btn-secondary">取消</a>
+            <a href="#" class="btn btn-primary">送出</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- s1200版權宣告友站連結 -->
+  <section id="s1200" class="bg-light">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link disabled">© 2023 - 個人練習，僅供參考 All Rights Reserved.</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">台北辦事處</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">高雄辦事處</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">美國分公司</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">紐西蘭分公司</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">日本分公司</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/wow.min.js"></script>
+
+  <!-- //counterup 跑動數字 for s400-->
+  <script src="js/unpkg.com_counterup2@2.0.2_dist_index.js"></script>
+
+  <script>
+    new WOW().init();
+  </script>
+
+  <script>
+    const counterUp = window.counterUp.default
+
+    const callback = entries => {
+      entries.forEach(entry => {
+        const el = entry.target
+        if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+          counterUp(el, {
+            duration: 2000,
+            delay: 16,
+          })
+          el.classList.add('is-visible')
+        }
+      })
+    }
+
+    const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+    const el01 = document.querySelector('.counter01')
+    IO.observe(el01)
+
+    const el02 = document.querySelector('.counter02')
+    IO.observe(el02)
+
+    const el03 = document.querySelector('.counter03')
+    IO.observe(el03)
+
+    const el04 = document.querySelector('.counter04')
+    IO.observe(el04)
+
+    var flag_username = false;
+    var flag_password = false;
+    var flag_repassword = false;
+
+    $(function () {
+      //確認uid是否存在,若存在傳遞至後端check_uid_api.php確認是否合法
+      if (getCookie('uid01') !== "") {
+        //uid 存在; 傳遞至後端check_uid_api.php確認是否合法
+        $.ajax({
+          type: "POST",
+          url: "api/check_uid_api.php",
+          dataType: "json",
+          data: { uid: getCookie('uid01') },
+          success: showdata_check_uid,
+          error: function () {
+            alert("check_uid-api/check_uid_api.php");
+          }
+        });
+
+      }
+
+
+      //即時監聽username
+      $("#username").bind("input propertychange", function () {
+        console.log($(this).val());
+        if ($(this).val().length > 4 && $(this).val().length < 9) {
+          //符合規定
+          // $(this).removeClass("is-invalid");
+          // $(this).addClass("is-valid");
+          // flag_username = true;
+
+          //傳遞帳號至後端api確認是否可以使用
+          $.ajax({
+            type: "POST",
+            url: "api/reg_check_uni_api.php",
+            data: { username: $("#username").val() },
+            dataType: "json",
+            success: showdata_check_uni,
+            error: function () {
+              alert("確認帳號能否使用-api/reg_check_uni_api.php");
+            }
+          });
+        } else {
+          //不符合規定
+          $("#invalid_message").text("此帳號字數不符合規定");
+          $(this).removeClass("is-valid");
+          $(this).addClass("is-invalid");
+          flag_username = false;
+        }
+      });
+      //即時監聽password
+      $("#password").bind("input propertychange", function () {
+        // console.log($(this).val().length);
+        if ($(this).val().length > 4 && $(this).val().length < 9) {
+          //符合規定
+          $(this).removeClass("is-invalid");
+          $(this).addClass("is-valid");
+          flag_password = true;
+        } else {
+          //不符合規定
+          $(this).removeClass("is-valid");
+          $(this).addClass("is-invalid");
+          flag_password = false;
+        }
+      });
+      //即時監聽repassword
+      $("#repassword").bind("input propertychange", function () {
+        if ($(this).val() == $("#password").val()) {
+          //符合規定
+          $(this).removeClass("is-invalid");
+          $(this).addClass("is-valid");
+          flag_repassword = true;
+        } else {
+          //不符合規定
+          $(this).removeClass("is-valid");
+          $(this).addClass("is-invalid");
+          flag_repassword = false;
+        }
+      });
+      //按鈕監聽reg_btn
+      $("#reg_btn").click(function () {
+
+        if (flag_username && flag_password && flag_repassword) {
+          //欄位輸入正確 可以傳至API
+          $.ajax({
+            type: "POST",
+            url: "api/reg_api.php",
+            data: { username: $("#username").val(), password: $("#password").val(), nickname: $("#nickname").val(), email: $("#email").val(), gender: $("#gender").val(), address: $("#address").val() },
+            dataType: "json",
+            success: showdata_reg,
+            error: function () {
+              alert("註冊錯誤-api/reg_api.php");
+            }
+          });
+        } else {
+          //欄位輸入錯誤
+          alert("欄位輸入錯誤, 請修正!");
+        }
+      });
+
+      //按鈕監聽login_btn
+      $("#login_btn").click(function () {
+        console.log($("#login_username").val());
+        console.log($("#login_password").val());
+
+        //傳遞至login_api.php執行登入行為
+        $.ajax({
+          type: "POST",
+          url: "api/login_api.php",
+          data: { username: $("#login_username").val(), password: $("#login_password").val() },
+          dataType: "json",
+          success: showdata_login,
+          error: function () {
+            alert("登入相關錯誤-api/login_api.php");
+          }
+        });
+      });
+      //監聽登出按鈕 #s20_logout_btn
+      $("#s20_logout_btn").click(function () {
+        logout();
+      });
+    });
+
+    function showdata_reg(data) {
+      console.log(data);
+      if (data.state) {
+        alert(data.message);
+        $("#registerModal").modal("hide");
+        $("#loginModal").modal("show");
+      } else {
+        alert(data.message);
+      }
+    }
+
+    function showdata_check_uni(data) {
+      //考慮帳號可否使用和帳號是否符合規則的提示feedback顯示時機??
+      console.log(data);
+      if (data.state) {
+        //帳號不存在，可以使用
+        $("#valid_message").text("此帳號不存在，可以使用");
+        $("#username").removeClass("is-invalid");
+        $("#username").addClass("is-valid");
+        flag_username = true;
+      } else {
+        // 此帳號存在，不可以使用
+        $("#invalid_message").text("此帳號存在，不可以使用");
+        $("#username").removeClass("is-valid");
+        $("#username").addClass("is-invalid");
+        flag_username = false;
+      }
+    }
+
+    function showdata_login(data) {
+      console.log(data);
+      if (data.state) {
+        if (data.data[0].UserState == 'true') {
+
+          //登入成功
+          // alert(data.message);
+          //將uid存入cookie
+          setCookie('uid01', data.data[0].Uid01, 7);
+          // loginModal 隱藏
+          $("#loginModal").modal("hide");
+
+          // if (data.data[0].Level == "999") {
+          // 1. 登入s20_login_btn 按鈕隱藏 
+          // 2. 註冊s20_regist_btn 按鈕隱藏
+          // 3. 顯示 後台管理 按鈕(可連結至control panel)
+
+          $("#s20_login_btn").addClass('d-none');
+          $("#s20_register_btn").addClass('d-none');
+          if (data.data[0].Username == "admin") {
+            $("#s20_control_btn").removeClass('d-none'); //後台
+          }
+          $("#s20_stock_control_btn").removeClass('d-none');
+          //顯示歡迎詞
+          $("#login_message").removeClass('d-none');
+          $("#login_message").text('歡迎管理員' + data.data[0].Username);
+          //顯示登出按鈕
+          $("#s20_logout_btn").removeClass('d-none');
+          // } else {
+          $("#s20_login_btn").addClass('d-none');
+          $("#s20_register_btn").addClass('d-none');
+          $("#s20_stock_control_btn").removeClass('d-none');
+          //顯示歡迎詞
+          $("#login_message").removeClass('d-none');
+          $("#login_message").text('歡迎管理員' + data.data[0].Username);
+          //顯示登出按鈕
+          $("#s20_logout_btn").removeClass('d-none');
+          // }
+          // location.href = "20230810-control_panel.html";
+        } else {
+          //帳號被停權
+          alert("此帳號被停權, 請聯絡管理員!");
+        }
+
+      } else {
+        //登入失敗
+        alert(data.message);
+      }
+    }
+
+    function showdata_check_uid(data) {
+      console.log(data);
+      if (data.state) {
+        //驗證成功 表示已登入
+        // 1. 登入 s20_login_btn 按鈕隱藏 
+        // 2. 註冊 s20_register_btn 按鈕隱藏
+        // 3. 顯示 後台管理 按鈕(可連結至control panel)
+
+        $("#s20_login_btn").addClass('d-none');
+        $("#s20_register_btn").addClass('d-none');
+        // $("#s20_control_btn").removeClass('d-none');
+        if (data.data[0].Username == "admin") {
+          $("#s20_control_btn").removeClass('d-none');//後台
+        }
+        $("#s20_stock_control_btn").removeClass('d-none');
+
+        //顯示歡迎詞
+        $("#login_message").removeClass('d-none');
+        $("#login_message").text('歡迎管理員' + data.data[0].Username);
+
+        //顯示登出按鈕
+        $("#s20_logout_btn").removeClass('d-none');
+      } else {
+        //驗證成功 需要重新登入
+      }
+    }
+
+    function logout() {
+      setCookie('uid01', '', 7);
+      location.href = "20230720-HWSPA.html";
+    }
+
+
+    //w3c
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+  </script>
+
+</body>
+
+</html>
