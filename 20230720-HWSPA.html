@@ -801,6 +801,7 @@
 
   <!-- //counterup 跑動數字 for s400-->
   <script src="js/unpkg.com_counterup2@2.0.2_dist_index.js"></script>
+  <script src="js/api_link.js"></script>
 
   <script>
     new WOW().init();
@@ -846,7 +847,7 @@
         //uid 存在; 傳遞至後端check_uid_api.php確認是否合法
         $.ajax({
           type: "POST",
-          url: "api/check_uid_api.php",
+          url: api_link + "api/check_uid_api.php",
           dataType: "json",
           data: { uid: getCookie('uid01') },
           success: showdata_check_uid,
@@ -870,7 +871,7 @@
           //傳遞帳號至後端api確認是否可以使用
           $.ajax({
             type: "POST",
-            url: "api/reg_check_uni_api.php",
+            url: api_link + "api/reg_check_uni_api.php",
             data: { username: $("#username").val() },
             dataType: "json",
             success: showdata_check_uni,
@@ -922,7 +923,7 @@
           //欄位輸入正確 可以傳至API
           $.ajax({
             type: "POST",
-            url: "api/reg_api.php",
+            url: api_link + "api/reg_api.php",
             data: { username: $("#username").val(), password: $("#password").val(), nickname: $("#nickname").val(), email: $("#email").val(), gender: $("#gender").val(), address: $("#address").val() },
             dataType: "json",
             success: showdata_reg,
@@ -944,7 +945,7 @@
         //傳遞至login_api.php執行登入行為
         $.ajax({
           type: "POST",
-          url: "api/login_api.php",
+          url: api_link + "api/login_api.php",
           data: { username: $("#login_username").val(), password: $("#login_password").val() },
           dataType: "json",
           success: showdata_login,
